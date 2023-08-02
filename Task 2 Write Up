@@ -1,0 +1,49 @@
+
+Requirement F1, F2:
+For this project, I used the nearest neighbor algorithm. Nearest neighbor has a time complexity of O(n^2) and a space complexity of O(n^2).
+The benefits of nearest neighbor are that it is very straightforward to implement, and is helpful to understand the concept of holding
+a useful (in this case closest) value in a "bucket" where it can be replaced by something that proves even better (in this case closer).
+As this is a program that likely will be changed by future employees at the company, nearest neighbor is very straight forward to read and
+make necessary changes to without adding much cost to the company.
+The disadvantages of this algorithm are that it involves comparing every distance which can be costly and slowly if there are perhaps thousands of packages
+that need to delivered. Similarly, another disadvantage is that is uses a lot of memory because all of the data needs to be stored to be compared
+and then the distance needs to be calculated for each comparison.
+This algorithm meets the needs of this project because the method to finding the distance is straightforward using the csv files, and then
+there is just a simple comparison between the current lowest distance and the next one calculated. If the next one calculated is lower than
+the one currently being held in the "bucket" variable, then the "bucket" will now hold the new lowest distance. For this project, we just wanted
+to make sure that we were getting the lowest distance between locations, and we did not have a lot of packages, so the time and space complexity did not
+need to be prioritized as much as it would need to be with huge amounts of data.
+
+Requirement F3:
+Another algorithm I could have selected would be Dijkstra Algorithm, which is discussed in this course. This algorithm involves finding
+distances between vertices on a graph. It is a bit more similar to what one might think of when you think of finding distance mathematically. The
+biggest difference is that this would be using a graph instead of a hashtable. We would designate a specific root node and then find the
+minimum distance to the next vertex.
+Similarly, there is the Bellman-Ford Shortest Path Algorithm which would determine the shortest path from an initial vertex to
+all of the other vertices on the graph. This algorithm has a larger time complexity than Dijkstra and has less scalability ("What Are The Differences Between Bellman Ford's and
+Dijkstra's Algorithms"). This would also use a tree instead of a chaining hashtable.
+
+If I were to do this project again, I would be interested in coming up with an algorithm to decide which packages go on which trucks. I
+considered this, however I had a hard time with thinking through implementing the logic for dealing with the time constraints in addition to
+which is closest to the next destination. I think this would add an extra level of challenge to the project. I also would be interested in creating
+a more aesthetically pleasing user interface.
+
+H1:
+Alternatives to the chaining hashtable that I could have used would be a graph, which would be suited well for the above mentioned
+Dijkstra's Algorithm. This would connect nodes using an edge. This can allow for easy data processing, however it would add additional complexity and be difficult to scale.
+Another alternative data structure could be a hashmap instead of a hashtable. A hashmap allows for null keys and null values, unlike the
+hashtable. A hashmap would be very similar to a hashtable, and is considered a more modern approach to the same functionality (Differences Between Hashmap and Hashtable).
+A binary search tree could have been used. This would support the same functions such as insert, delete and search. Inserting and deleting for a binary search tree is
+fast, but they do not support random access as well as a hashtable (Applications, Advantages and Disadvantages).
+
+
+
+References:
+“Applications, Advantages and Disadvantages of Binary Search Tree.” GeeksforGeeks, 21 May 2023, www.geeksforgeeks.org/applications-advantages-and-disadvantages-of-binary-search-tree/?ref=lbp.
+“Differences between HashMap and Hashtable in Java.” Baeldung, 31 Oct. 2022, www.baeldung.com/hashmap-hashtable-differences.
+Dr. Cemal Tepe "Let's Go Hashing" WGU Webinar, 17 November, 2020, https://wgu.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f08d7871-d57a-496e-a6a1-ac7601308c71
+Dr. Cemal Tepe "Getting Greedy, who moved my data?" WGU Webinar, 27 November, 2020, https://wgu.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=eee77a88-4de8-4d42-a3c3-ac8000ece256
+Dr. Cemal Tepe "How To Dijkstra?" WGU Webinar, 26 November, 2020, https://wgu.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=aad71bd6-abf5-4cd4-8a78-ac7f01039c73
+Dr. Cemal Tepe "Python Modules" WGU Webinar, 27 November, 2020 https://wgu.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a6e33b6d-9753-4ba4-a1b6-ac8000f5d250
+“How Can I Get a Specific Field of a CSV File?” Stack Overflow, 1 Oct. 1957, stackoverflow.com/questions/5757743/how-can-i-get-a-specific-field-of-a-csv-file.
+“What Are the Differences between Bellman Ford’s and Dijkstra’s Algorithms?” GeeksforGeeks, 23 June 2022, www.geeksforgeeks.org/what-are-the-differences-between-bellman-fords-and-dijkstras-algorithms/.
